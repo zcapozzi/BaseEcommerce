@@ -1,0 +1,41 @@
+
+{% extends layout %}
+
+
+{% block body %}
+
+    <div class='col-12 centered' id='banner'></div>
+    {% if misc.breadcrumbs %}
+        <div class='col-12 centered'>
+            {{misc.breadcrumbs}}
+        </div>
+    {% endif %}
+
+    <div class='col-12 centered'>
+
+        <span class='font-36 bold'>Your account has been activated.</span>
+
+    </div>
+    <div class='col-12 centered'>
+
+        <span class='font-15'>Click <a href='/'>here</a> to get started.</span>
+
+    </div>
+
+
+<script>
+
+    var preferences = {{user_obj.relevant_preferences|to_json2}};
+    var misc = {{misc|to_json2}};
+    
+    populate_preferences(preferences);    
+    
+    $( "#threedot" ).click(function( event ) {
+      event.stopPropagation(); menu_toggle();
+    });
+    $( "#personicon" ).click(function( event ) {
+      event.stopPropagation(); menu_toggle();
+    });
+    finish_load(JSON.parse({{user_obj.notifications|to_json2}}));
+</script>
+{% endblock %}

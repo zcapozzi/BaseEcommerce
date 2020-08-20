@@ -1,0 +1,118 @@
+
+{% extends layout %}
+
+
+{% block body %}
+
+    <div class='col-12 centered' id='banner'></div>
+    {% if misc.breadcrumbs %}
+        <div class='col-12 centered'>
+            {{misc.breadcrumbs}}
+        </div>
+    {% endif %}
+    {% if misc.error %}
+        <div class='col-12 error'><span class='error' >{{misc.error|safe}}</span></div>
+    {% endif %}
+    {% if misc.msg %}
+        <div class='col-12 error'><span class='msg' style='color:blue;' >{{misc.msg|safe}}</span></div>
+    {% endif %}
+    <div class='col-12'>
+        <div class='col-12 centered dtop' style='padding: 80px 0px 60px 0px;'>
+            <span class='font-36 bold light' style=''>The best lacrosse statistics. Period.</span>
+        </div>
+        <div class='col-12 centered mob' style='padding: 60px 0px 10px 0px;'>
+            <span class='font-36 bold light' style=''>The best lacrosse statistics.</span>
+        </div>
+        <div class='col-12 centered mob' style='padding: 10px 0px 30px 0px;'>
+            <span class='font-36 bold light' style=''>Period.</span>
+        </div>
+    </div>
+
+
+
+    <div class='' style='padding:20px;'>
+        <div class=''>
+            <div class=' centered bbottom' style='padding-top:30px; padding-bottom:20px;'>
+            <span class='font-36 bold'>Products</span>
+            </div>
+        </div>
+    </div>
+    <div class='col-12 flex-block'>
+        <div class='col-4-12 flex'>
+            <div class='col-1'></div>
+            
+            <div class='col-10'>
+                <a href='/product-summary-basic' style='text-decoration:none; color:inherit;'>
+                    <div id='fan_product' class='col-12 centered'><img class='' style=' ' src='/static/img/fan_icon.png'></div>
+                    <div class='centered' style=''><span class='font-18 bold'>For Fans</span></div>
+                    <div class='centered text-container medium'><span class='font-15 contents'>
+                        Follow your team closer than ever with more in-depth team and individual player statistics as well as post-game (and half) rapid statistical reports delivered straight to your inbox.
+                    </span></div>
+                </a>
+            </div>
+            
+            <div class='col-1'></div>
+            
+        </div>
+        <div class='col-4-12 flex'>
+            <div class='col-1'></div>
+            <div class='col-10'>
+            <a href='/product-summary-media' style='text-decoration:none; color:inherit;'>
+                <div id='media_product' class='col-12 centered'><img class='' style=' ' src='/static/img/media_icon.png'></div>
+                <div class='col-12 centered' style=''><span class='font-18 bold'>For Media</span></div>
+                <div class='centered text-container medium'><span class='font-15 contents'>
+                    Make your game prep a snap with the LacrosseReference previews and statistical trends at your fingertips. Everything you need to know about the players, the teams, and what drives the match-up.
+                </span></div>
+            </a>
+            </div>
+            <div class='col-1'></div>
+        </div>
+        
+        <div class='col-4-12 flex'>
+           
+            
+            
+            <div class='col-1'></div>
+            <div class='col-10'>
+            <a href='/product-summary-team' style='text-decoration:none; color:inherit;'>
+                <div id='team_product' class='col-12 centered'><img class='' style=' ' src='/static/img/team_icon.png'></div>
+                <div class='col-12 centered' style=''><span class='font-18 bold'>For Teams</span></div>
+                <div class='centered text-container medium'><span class='font-15 contents'>
+                    Scout faster, coach smarter. LacrosseReference PRO gives you what you need to gain that extra competitive edge. Opponent match-ups, in-depth player profiles, and access to our entire database.
+                </span></div>
+            </a>
+            </div>
+            <div class='col-1'></div>
+        </div>
+        
+    </div>
+
+    <div class='' style='padding:20px;'>
+            <div class=''>
+                <div class='col-12 centered bbottom'><span class='font-36 bold'>Why PRO?</span></div>
+                
+                <div class='col-12' style='padding-top:30px;'><span class='font-15 contents'>
+                When I started the LacrosseReference project, there was a very real sense that it might amount to nothing. Who was I to create a lacrosse analytics website, right? But the audience continued to grow, the ideas began to get some traction, and the content even found it's way into the heart of the lacrosse media landscape. After 4 years, I'm proud of what LacrosseReference has become.<BR><BR>
+                But I've also realized that there is a segment of the lacrosse world that is looking for more. The public site has always been focused on introducing new concepts broadly, but without much depth of detail. LacrosseReference PRO is designed to go deep on a few core ideas around performance and match-ups. You can "follow" your team on the public site, but if you really want to get the full picture, PRO is for you.
+                </span></div>
+                
+            </div>
+    
+        
+        
+        
+    </div>
+
+
+<script>
+    $( "#threedot" ).click(function( event ) {
+      event.stopPropagation(); menu_toggle();
+    });
+    $( "#personicon" ).click(function( event ) {
+      event.stopPropagation(); menu_toggle();
+    });
+    finish_load(JSON.parse({{user_obj.notifications|to_json2}}));
+    
+</script>
+
+{% endblock %}

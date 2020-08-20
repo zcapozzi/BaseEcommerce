@@ -1,3 +1,19 @@
+# Google App Engine generated folder
+appengine-generated/
+client_secrets.json
+gitignoretest.txt
+lib/
+LRP.pyc
+*.pyc
+zack_inc_lite.pyc
+appengine_config.pyc
+tags/*.pyc
+LocalDocs/
+pre_upload.py
+upload_dev.bat
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

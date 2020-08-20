@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html>
+  <head>
+     {% if user_obj.track_GA %}
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90014763-2"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}  gtag('js', new Date()); gtag('config', 'UA-90014763-2'); </script>
+    {% endif %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>
+        {% if misc.title %}
+            {{misc.title}}
+        {% else %}
+            LacrosseReference - PRO
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="static/css/oswald.css" />
+    <link rel="stylesheet" href="static/css/LR_aesthetics.css" />
+    <link rel="stylesheet" href="static/css/LR_elements.css" />
+    <link rel="stylesheet" href="static/css/LR_spacing.css" />
+    <link rel="stylesheet" href="static/css/LR_structural.css" />
+    
+    <script src="static/js/laxref.js"></script>
+    <script src="static/js/laxrefpro.js?dt=1"></script>
+    <script src="static/js/jquery.min.js"></script>
+
+  </head>
+  <body onclick='menu_toggle(true)'>
+  
+  <div class='viewbox'>
+        <div class='col-12 flex site-header-bar no-padding' style='border-bottom:solid 1px black;'>
+            
+          
+            <div class='col-7-8 no-padding flex'>
+                <span id='main_logo' class='dtop site-logo' ><a class='menu-link' href='/'>LacrosseReference PRO</a></span>
+                <span class='mob site-logo'><a class='menu-link' href='/'>LacrosseReference PRO</a></span>
+            </div>
+        </div>
+
+        
+        {% block body %}{% endblock %}
+        
+  </div>
+  <div class='col-12 centered'><span class='font-14'>{{misc.copyright|safe}}</span></div>
+  
+  </body>
+</html>
+

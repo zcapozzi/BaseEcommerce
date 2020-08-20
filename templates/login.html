@@ -1,0 +1,48 @@
+
+{% extends "layout_login.html" %}
+
+
+{% block body %}
+
+    <div class='col-12 centered' id='banner'></div>
+    {% if misc.breadcrumbs %}
+        <div class='col-12 centered'>
+            {{misc.breadcrumbs}}
+        </div>
+    {% endif %}
+
+    <div class='col-12 flex'>
+        <div class='col-4-1'></div>
+        <div class='col-4-10' style='background-color: #F9F9F9;'>
+            <FORM action='/' method=POST>
+            <div class='col-12 centered'>
+                
+                <div class='col-12'><input type=text name='username' id='username'  placeholder="Username" /></div>
+                <div class='col-12'><input type=password name='password' id='password' placeholder="Password" /></div>
+                {% if misc.error %}
+                    <div class='col-12 error'><span class='error' >{{misc.error}}</span></div>
+                {% endif %}
+                <div class='col-12'><button class='action-button' type=submit id='submit_me' />Submit</button></div>
+                <div class='col-12 centered' style='padding-top:15px;'>
+                    
+                    <a class='font-14' href='/forgot'><span class='font-14'>Forgot Password</span></a>
+                </div>
+                <div class='col-12 centered'>
+                    <a class='font-14' href='/register'><span class='font-14'>Create Account</span></a>
+                    
+                </div>
+            </div>
+            </FORM>
+        </div>
+        <div class='col-4-1'></div>
+    </div>
+  
+<script>   
+    finish_load(JSON.parse({{user_obj.notifications|to_json2}}));
+</script>
+
+
+
+
+
+{% endblock %}
